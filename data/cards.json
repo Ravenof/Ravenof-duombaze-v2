@@ -224,7 +224,7 @@
     "type": "Veikėjas",
     "faction": "Plėšikų naktis",
     "effect": "Pasišaipymas. Pasyvus - kai pavagiamos monetos įgyja +2HP.",
-    "image": null,
-    "id": "assets/cards/8_gylis_paslaptingasis.png"
+    "image": "assets/cards/8_gylis_paslaptingasis.png",
+    "id": "70"
   }
 ]
