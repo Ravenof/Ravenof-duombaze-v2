@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kaladės kūrėjas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google fonts for fantasy vibe -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Append version query to bust browser cache -->
+    <link rel="stylesheet" href="style.css?v=5">
+    <style>
+    /* Inline overrides for card layout to ensure professional appearance */
+    .card-item,
+    .deck-card {
+        height: 350px !important;
+        min-height: unset !important;
+        padding: 0 !important;
+        display: block !important;
+        overflow: hidden !important;
+        background-color: transparent !important;
+    }
+    .card-image-thumb {
+        width: 100% !important;
+        height: 65% !important;
+        max-height: none !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        object-fit: cover !important;
+    }
+    .card-info {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: rgba(255, 250, 240, 0.85) !important;
+        padding: 10px !important;
+        font-size: 0.9rem !important;
+        color: #2e1b47 !important;
+    }
+    .card-info h5 {
+        font-family: 'Cinzel', serif !important;
+        font-size: 1rem !important;
+        margin: 0 0 0.4rem 0 !important;
+        color: #2e1b47 !important;
+    }
+    .card-info ul {
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .card-info li {
+        margin: 0 0 2px 0 !important;
+    }
+    .card-info strong {
+        font-weight: 600 !important;
+        margin-right: 4px !important;
+    }
+    .card-info .btn {
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0.6rem !important;
+    }
+    .card-item *, .deck-card * {
+        user-select: none !important;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Ravenof</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kortos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="deck.html">Kaladė</a></li>
+                    <li class="nav-item" id="adminNavItem" style="display: none;"><a class="nav-link" href="admin.html">Admin</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item" id="loginNavItem"><a class="nav-link" href="login.html">Prisijungti</a></li>
+                    <li class="nav-item" id="logoutNavItem" style="display: none;"><a class="nav-link" href="#" onclick="handleLogout(event)">Atsijungti</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="mb-3">Kaladės kūrėjas</h2>
+        <div class="row">
+            <div class="col-lg-5">
+                <h5>Kortų sąrašas</h5>
+                <div class="mb-3">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Paieška pagal pavadinimą">
+                </div>
+                <div class="row g-2 mb-3">
+                    <div class="col-md-4">
+                        <select id="filterFaction" class="form-select">
+                            <option value="">Visos frakcijos</option>
+                            <option>Inkvizicijos legionas</option>
+                            <option>Mistikos melodija</option>
+                            <option>Šviesos pulkas</option>
+                            <option>Rytų vėjas</option>
+                            <option>Mirties maršas</option>
+                            <option>Demonų orda</option>
+                            <option>Vryhiok'o gauja</option>
+                            <option>Plėšikų naktis</option>
+                            <option>Neutralūs</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select id="filterCost" class="form-select">
+                            <option value="">Visos kainos</option>
+                            <option>100</option>
+                            <option>200</option>
+                            <option>300</option>
+                            <option>400</option>
+                            <option>500</option>
+                            <option>600</option>
+                            <option>700</option>
+                            <option>800</option>
+                            <option>900</option>
+                            <option>1000</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select id="filterRarity" class="form-select">
+                            <option value="">Visi retumai</option>
+                            <option>Paprastas</option>
+                            <option>Magiškas</option>
+                            <option>Unikalus</option>
+                            <option>Epiškas</option>
+                            <option>Legendinis</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mt-2">
+                        <select id="filterType" class="form-select">
+                            <option value="">Visi tipai</option>
+                            <option>Burtas</option>
+                            <option>Reakcija</option>
+                            <option>Prakeiksmas</option>
+                            <option>Veikėjas</option>
+                            <option>Artefaktas</option>
+                            <option>Čempionas</option>
+                            <option>Laukas</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mt-2">
+                        <input type="text" id="filterAttack" class="form-control" placeholder="Ataka (pvz. 2,3)">
+                    </div>
+                    <div class="col-md-4 mt-2">
+                        <input type="text" id="filterHp" class="form-control" placeholder="Gyvybės (pvz. 1,2)">
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-sm mb-3" onclick="applyFilters()">Filtruoti</button>
+                <button class="btn btn-secondary btn-sm mb-3 ms-1" onclick="resetFilters()">Išvalyti</button>
+                <div id="card-container" class="card-list"></div>
+            </div>
+            <div class="col-lg-7">
+                <h5>Jūsų kaladė</h5>
+                <!-- Preview container now placed in deck column to show full card on hover -->
+                <div id="cardPreview" class="mb-3"></div>
+                <div id="deck-container" class="deck-list mb-3"></div>
+                <h5>Kaladės statistika</h5>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="chart-wrapper">
+                            <canvas id="costChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chart-wrapper">
+                            <canvas id="attackChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chart-wrapper">
+                            <canvas id="hpChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional chart row for card type distribution -->
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="chart-wrapper">
+                            <canvas id="typeChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    // Initialize nav items
+    function initNavDeck() {
+        if (isAdminLoggedIn()) {
+            document.getElementById('adminNavItem').style.display = 'block';
+            document.getElementById('loginNavItem').style.display = 'none';
+            document.getElementById('logoutNavItem').style.display = 'block';
+        } else {
+            document.getElementById('adminNavItem').style.display = 'none';
+            document.getElementById('loginNavItem').style.display = 'block';
+            document.getElementById('logoutNavItem').style.display = 'none';
+        }
+    }
+    function handleLogout(event) {
+        event.preventDefault();
+        logout();
+        initNavDeck();
+        window.location.href = 'index.html';
+    }
+    // Deck builder logic
+    let allCards = [];
+    let filteredCards = [];
+    let deck = [];
+    let costChart, attackChart, hpChart, typeChart;
+    function renderCardList() {
+        const container = document.getElementById('card-container');
+        container.innerHTML = '';
+        if (filteredCards.length === 0) {
+            container.innerHTML = '<p>Nerasta kortų.</p>';
+            return;
+        }
+        filteredCards.forEach(card => {
+            const div = document.createElement('div');
+            div.classList.add('card-item');
+            // Build card details similar to index page, with each attribute on its own line
+            // Build details list conditionally showing Attack and HP only if present
+            const details = [];
+            details.push(`<li><strong>Frakcija:</strong> ${card.faction || '–'}</li>`);
+            details.push(`<li><strong>Kaina:</strong> ${card.cost ?? '–'}</li>`);
+            details.push(`<li><strong>Retumas:</strong> ${card.rarity || '–'}</li>`);
+            details.push(`<li><strong>Tipas:</strong> ${card.type || '–'}</li>`);
+            if (card.attack !== null && card.attack !== undefined) {
+                details.push(`<li><strong>Ataka:</strong> ${card.attack}</li>`);
+            }
+            if (card.hp !== null && card.hp !== undefined) {
+                details.push(`<li><strong>Gyvybės:</strong> ${card.hp}</li>`);
+            }
+            div.innerHTML = `
+                ${card.image
+                    ? `<img src="${card.image}" alt="${card.name}" class="card-image-thumb">`
+                    : `<div class="card-image-thumb"></div>`}
+                <div class="card-info">
+                    <h5>${card.name}</h5>
+                    <ul>
+                        ${details.join('')}
+                    </ul>
+                    <button class="btn btn-sm btn-success mt-2">Pridėti</button>
+                </div>
+            `;
+            // Add click event to add card to deck
+            div.querySelector('button').addEventListener('click', () => addToDeck(card));
+            container.appendChild(div);
+        });
+    }
+    function renderDeckList() {
+        const container = document.getElementById('deck-container');
+        container.innerHTML = '';
+        if (deck.length === 0) {
+            container.innerHTML = '<p>Kaladė tuščia.</p>';
+            updateCharts();
+            return;
+        }
+        const grouped = {};
+        deck.forEach(card => {
+            grouped[card.id] = grouped[card.id] || { card: card, count: 0 };
+            grouped[card.id].count += 1;
+        });
+        Object.values(grouped).forEach(entry => {
+            const card = entry.card;
+            const div = document.createElement('div');
+            div.classList.add('deck-card');
+            // Compose deck card details similar to card preview, showing quantity
+            // Build details list for deck card
+            const deckDetails = [];
+            deckDetails.push(`<li><strong>Frakcija:</strong> ${card.faction || '–'}</li>`);
+            deckDetails.push(`<li><strong>Kaina:</strong> ${card.cost ?? '–'}</li>`);
+            deckDetails.push(`<li><strong>Retumas:</strong> ${card.rarity || '–'}</li>`);
+            deckDetails.push(`<li><strong>Tipas:</strong> ${card.type || '–'}</li>`);
+            if (card.attack !== null && card.attack !== undefined) {
+                deckDetails.push(`<li><strong>Ataka:</strong> ${card.attack}</li>`);
+            }
+            if (card.hp !== null && card.hp !== undefined) {
+                deckDetails.push(`<li><strong>Gyvybės:</strong> ${card.hp}</li>`);
+            }
+            div.innerHTML = `
+                ${card.image
+                    ? `<img src="${card.image}" alt="${card.name}" class="card-image-thumb">`
+                    : `<div class="card-image-thumb"></div>`}
+                <div class="card-info">
+                    <h5>${card.name} x ${entry.count}</h5>
+                    <ul>
+                        ${deckDetails.join('')}
+                    </ul>
+                    <button class="btn btn-sm btn-remove mt-2">Pašalinti</button>
+                </div>
+            `;
+            div.querySelector('.btn-remove').addEventListener('click', () => removeFromDeck(card.id));
+            // Attach hover event to show full card preview when hovering over deck cards
+            div.addEventListener('mouseover', () => showCardPreview(card));
+            container.appendChild(div);
+        });
+        // After rendering all cards, attach a single mouseleave event on the deck container to clear the preview
+        const deckCont = document.getElementById('deck-container');
+        deckCont.removeEventListener('mouseleave', clearCardPreview);
+        deckCont.addEventListener('mouseleave', clearCardPreview);
+        updateCharts();
+    }
+
+    // Show detailed preview of card on hover
+    function showCardPreview(card) {
+        const preview = document.getElementById('cardPreview');
+        // Build details list for preview
+        const previewDetails = [];
+        previewDetails.push(`<li><strong>Frakcija:</strong> ${card.faction || '–'}</li>`);
+        previewDetails.push(`<li><strong>Kaina:</strong> ${card.cost ?? '–'}</li>`);
+        previewDetails.push(`<li><strong>Retumas:</strong> ${card.rarity || '–'}</li>`);
+        previewDetails.push(`<li><strong>Tipas:</strong> ${card.type || '–'}</li>`);
+        if (card.attack !== null && card.attack !== undefined) {
+            previewDetails.push(`<li><strong>Ataka:</strong> ${card.attack}</li>`);
+        }
+        if (card.hp !== null && card.hp !== undefined) {
+            previewDetails.push(`<li><strong>Gyvybės:</strong> ${card.hp}</li>`);
+        }
+        previewDetails.push(`<li><strong>Efektas:</strong> ${card.effect || '–'}</li>`);
+        preview.innerHTML = `
+            <div class="card-item">
+                ${card.image
+                    ? `<img src="${card.image}" alt="${card.name}" class="card-image-thumb">`
+                    : `<div class="card-image-thumb"></div>`}
+                <div class="card-info">
+                    <h5>${card.name}</h5>
+                    <ul>
+                        ${previewDetails.join('')}
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+    function clearCardPreview() {
+        const preview = document.getElementById('cardPreview');
+        preview.innerHTML = '';
+    }
+    function updateCharts() {
+        const costCounts = {};
+        const attackCounts = {};
+        const hpCounts = {};
+        const typeCounts = {};
+        deck.forEach(card => {
+            const c = card.cost ?? 'N/A';
+            costCounts[c] = (costCounts[c] || 0) + 1;
+            const a = card.attack ?? 'N/A';
+            attackCounts[a] = (attackCounts[a] || 0) + 1;
+            const h = card.hp ?? 'N/A';
+            hpCounts[h] = (hpCounts[h] || 0) + 1;
+            const t = card.type || 'N/A';
+            typeCounts[t] = (typeCounts[t] || 0) + 1;
+        });
+        function getSortedEntries(obj) {
+            const numeric = [];
+            const nonNumeric = [];
+            Object.keys(obj).forEach(k => {
+                if (k !== 'N/A' && !isNaN(k)) numeric.push(Number(k)); else nonNumeric.push(k);
+            });
+            numeric.sort((a, b) => a - b);
+            nonNumeric.sort();
+            return numeric.concat(nonNumeric).map(k => String(k)).map(k => [k, obj[k] || 0]);
+        }
+        const costEntries = getSortedEntries(costCounts);
+        const attackEntries = getSortedEntries(attackCounts);
+        const hpEntries = getSortedEntries(hpCounts);
+        costChart = createOrUpdateBarChart(costChart, 'costChart', costEntries, 'Kaina');
+        attackChart = createOrUpdateBarChart(attackChart, 'attackChart', attackEntries, 'Ataka');
+        hpChart = createOrUpdateBarChart(hpChart, 'hpChart', hpEntries, 'Gyvybės');
+        // Card type distribution entries sorted alphabetically
+        const typeEntries = Object.keys(typeCounts).sort().map(k => [k, typeCounts[k]]);
+        typeChart = createOrUpdateBarChart(typeChart, 'typeChart', typeEntries, 'Tipas');
+    }
+    function addToDeck(card) {
+        deck.push(card);
+        renderDeckList();
+    }
+    function removeFromDeck(id) {
+        const idx = deck.findIndex(c => c.id === id);
+        if (idx >= 0) deck.splice(idx, 1);
+        renderDeckList();
+    }
+    function applyFilters() {
+        const criteria = {
+            search: document.getElementById('searchInput').value,
+            faction: document.getElementById('filterFaction').value,
+            cost: parseFilterValues(document.getElementById('filterCost').value),
+            rarity: document.getElementById('filterRarity').value,
+            type: document.getElementById('filterType').value,
+            attack: parseFilterValues(document.getElementById('filterAttack').value),
+            hp: parseFilterValues(document.getElementById('filterHp').value)
+        };
+        filteredCards = filterCards(allCards, criteria);
+        renderCardList();
+    }
+    function resetFilters() {
+        document.getElementById('searchInput').value = '';
+        document.getElementById('filterFaction').value = '';
+        document.getElementById('filterCost').value = '';
+        document.getElementById('filterRarity').value = '';
+        document.getElementById('filterType').value = '';
+        document.getElementById('filterAttack').value = '';
+        document.getElementById('filterHp').value = '';
+        filteredCards = [...allCards];
+        renderCardList();
+    }
+    // Initialize page
+    initNavDeck();
+    allCards = getCards();
+    filteredCards = [...allCards];
+    renderCardList();
+    renderDeckList();
+
+    // Trigger filtering when pressing Enter in the search input for deck
+    document.getElementById('searchInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            applyFilters();
+        }
+    });
+
+    // Trigger filtering when pressing Enter in any of the filter inputs (attack, hp, cost, rarity, type, faction)
+    ['filterFaction', 'filterCost', 'filterRarity', 'filterType', 'filterAttack', 'filterHp'].forEach(function(id) {
+        const elem = document.getElementById(id);
+        elem.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                applyFilters();
+            }
+        });
+    });
+    </script>
+</body>
+</html>

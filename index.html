@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ravenof kortų sąrašas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google fonts for fantasy vibe -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Append version query to bust browser cache -->
+    <link rel="stylesheet" href="style.css?v=5">
+    <!-- The card styling is defined in the shared style.css; no extra overrides are needed here. -->
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Ravenof</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Kaladės kūrėjas</a></li>
+                    <li class="nav-item" id="adminNavItem" style="display: none;"><a class="nav-link" href="admin.html">Admin</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item" id="loginNavItem"><a class="nav-link" href="login.html">Prisijungti</a></li>
+                    <li class="nav-item" id="logoutNavItem" style="display: none;"><a class="nav-link" href="#" onclick="handleLogout(event)">Atsijungti</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="mb-3">Kaladės kūrėjas</h2>
+        <div class="row">
+            <!-- Card list and filters column -->
+            <div class="col-lg-7 mb-4">
+                <h5>Kortų sąrašas</h5>
+                <form class="row gy-2 gx-3 align-items-end mb-4" id="filterForm">
+                    <div class="col-md-4">
+                        <label class="form-label">Paieška pagal pavadinimą</label>
+                        <input type="text" class="form-control" id="search" placeholder="Pavadinimas">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Frakcija</label>
+                        <select id="faction" class="form-select">
+                            <option value="">Visos</option>
+                            <option>Inkvizicijos legionas</option>
+                            <option>Mistikos melodija</option>
+                            <option>Šviesos pulkas</option>
+                            <option>Rytų vėjas</option>
+                            <option>Mirties maršas</option>
+                            <option>Demonų orda</option>
+                            <option>Vryhiok'o gauja</option>
+                            <option>Plėšikų naktis</option>
+                            <option>Neutralūs</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Kaina</label>
+                        <select id="cost" class="form-select">
+                            <option value="">Visos</option>
+                            <option>100</option>
+                            <option>200</option>
+                            <option>300</option>
+                            <option>400</option>
+                            <option>500</option>
+                            <option>600</option>
+                            <option>700</option>
+                            <option>800</option>
+                            <option>900</option>
+                            <option>1000</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Retumas</label>
+                        <select id="rarity" class="form-select">
+                            <option value="">Visi</option>
+                            <option>Paprastas</option>
+                            <option>Magiškas</option>
+                            <option>Unikalus</option>
+                            <option>Epiškas</option>
+                            <option>Legendinis</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Tipas</label>
+                        <select id="type" class="form-select">
+                            <option value="">Visi</option>
+                            <option>Burtas</option>
+                            <option>Reakcija</option>
+                            <option>Prakeiksmas</option>
+                            <option>Veikėjas</option>
+                            <option>Artefaktas</option>
+                            <option>Čempionas</option>
+                            <option>Laukas</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Ataka</label>
+                        <input type="text" class="form-control" id="attack" placeholder="pvz. 2,3">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Gyvybės</label>
+                        <input type="text" class="form-control" id="hp" placeholder="pvz. 1,2">
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <button type="button" class="btn btn-primary" onclick="applyFilters()">Filtruoti</button>
+                        <button type="button" class="btn btn-secondary ms-2" onclick="resetFilters()">Išvalyti</button>
+                    </div>
+                </form>
+                <div class="card-list" id="cardContainer"></div>
+            </div>
+            <!-- Deck builder column -->
+            <div class="col-lg-5 mb-4">
+            <h5>Jūsų kaladė <span id="deckCount" class="deck-count"></span></h5>
+                <div id="deck-preview" class="preview-container"></div>
+                <div id="deck-list"></div>
+                <h5 class="mt-3">Kaladės statistika</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="chart-wrapper">
+                            <canvas id="costChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-wrapper">
+                            <canvas id="attackChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-wrapper">
+                            <canvas id="hpChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-wrapper">
+                            <canvas id="typeChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    // Initialize nav items based on admin login status
+    function initNav() {
+        if (isAdminLoggedIn()) {
+            document.getElementById('adminNavItem').style.display = 'block';
+            document.getElementById('loginNavItem').style.display = 'none';
+            document.getElementById('logoutNavItem').style.display = 'block';
+        } else {
+            document.getElementById('adminNavItem').style.display = 'none';
+            document.getElementById('loginNavItem').style.display = 'block';
+            document.getElementById('logoutNavItem').style.display = 'none';
+        }
+    }
+    function handleLogout(event) {
+        event.preventDefault();
+        logout();
+        initNav();
+        // Redirect to home page after logout
+        window.location.href = 'index.html';
+    }
+    // Render card list according to filters
+    function renderCards(cards) {
+        const container = document.getElementById('cardContainer');
+        container.innerHTML = '';
+        if (!cards || cards.length === 0) {
+            container.innerHTML = '<p>Nerasta kortų.</p>';
+            return;
+        }
+        cards.forEach(card => {
+            const div = document.createElement('div');
+            div.classList.add('card-item');
+            // Determine rarity class (sanitized)
+            const rarityClass = card.rarity ? 'rarity-' + slugifyRarity(card.rarity) : '';
+            if (rarityClass) div.classList.add(rarityClass);
+            // Build details list conditionally including Attack and HP
+            const details = [];
+            details.push(`<li><strong>Frakcija:</strong> ${card.faction || '–'}</li>`);
+            details.push(`<li><strong>Kaina:</strong> ${card.cost ?? '–'}</li>`);
+            details.push(`<li><strong>Retumas:</strong> ${card.rarity || '–'}</li>`);
+            details.push(`<li><strong>Tipas:</strong> ${card.type || '–'}</li>`);
+            if (card.attack !== null && card.attack !== undefined) {
+                details.push(`<li><strong>Ataka:</strong> ${card.attack}</li>`);
+            }
+            if (card.hp !== null && card.hp !== undefined) {
+                details.push(`<li><strong>Gyvybės:</strong> ${card.hp}</li>`);
+            }
+            details.push(`<li><strong>Efektas:</strong> ${card.effect || '–'}</li>`);
+            // Compose card markup: artwork on top, scrollable info and always-visible action button on bottom
+            div.innerHTML = `
+                <div class="card-top">
+                    ${card.image
+                        ? `<img src="${card.image}" alt="${card.name}">`
+                        : `<div class="placeholder"></div>`}
+                </div>
+                <div class="card-bottom">
+                    <div class="card-info">
+                        <h5>${card.name}</h5>
+                        <ul>
+                            ${details.join('')}
+                        </ul>
+                    </div>
+                    <button class="btn btn-sm btn-success card-action-btn">Pridėti</button>
+                </div>
+            `;
+            // Attach event to add card to deck
+            const btn = div.querySelector('button');
+            btn.addEventListener('click', () => addToDeck(card));
+            container.appendChild(div);
+        });
+    }
+
+    // Deck builder state and utilities
+    let deck = [];
+    let costChart, attackChart, hpChart, typeChart;
+
+    // Convert rarity names to a slug for CSS classes.
+    // Supports both Lithuanian rarities (Paprastas, Magiškas, Unikalus, Epiškas, Legendinis)
+    // and English rarities (Common, Uncommon, Rare, Epic, Legendary) by mapping them
+    // to the corresponding Lithuanian slug. Diacritics and whitespace are removed.
+    function slugifyRarity(rarity) {
+        if (!rarity) return '';
+        const r = rarity.toLowerCase();
+        // Map English rarity names to Lithuanian equivalents
+        const englishMap = {
+            'common': 'paprastas',
+            'uncommon': 'magiskas',
+            'rare': 'unikalus',
+            'epic': 'episkas',
+            'legendary': 'legendinis'
+        };
+        if (englishMap[r]) {
+            return englishMap[r];
+        }
+        // Normalize Lithuanian diacritics
+        const map = {
+            'ą': 'a', 'č': 'c', 'ę': 'e', 'ė': 'e', 'į': 'i',
+            'š': 's', 'ų': 'u', 'ū': 'u', 'ž': 'z', ' ': '', '–': '', '-': ''
+        };
+        return r.replace(/[ąčęėįšųūž\s–-]/g, m => map[m] || m);
+    }
+
+    // Add a card to the deck and update the deck view
+    // Add a card to the deck and update the deck view
+    function addToDeck(card) {
+        // Enforce a maximum deck size of 40 cards
+        if (deck.length >= 40) {
+            alert('Kaladė gali turėti ne daugiau kaip 40 kortų.');
+            return;
+        }
+        // Determine allowed duplicate limit: 1 for Legendary or Epic cards, 2 for others
+        const rarity = (card.rarity || '').toLowerCase();
+        const isLegendary = rarity.includes('legend') || rarity.includes('legendin');
+        const isEpic = rarity.includes('epic') || rarity.includes('epiš') || rarity.includes('episk');
+        const maxDuplicates = (isLegendary || isEpic) ? 1 : 2;
+        // Count existing duplicates of this card in the deck. Use ID if both cards have IDs, otherwise fallback to name.
+        const duplicateCount = deck.filter(c => {
+            if (card.id != null && c.id != null) {
+                return c.id === card.id;
+            }
+            return c.name === card.name;
+        }).length;
+        if (duplicateCount >= maxDuplicates) {
+            const msg = maxDuplicates === 1
+                ? 'Šios retumos kortos galima turėti tik vieną kopiją kaladėje.'
+                : 'Negalite turėti daugiau kaip dvi kopijas šios kortos.';
+            alert(msg);
+            return;
+        }
+        deck.push(card);
+        renderDeckList();
+        updateDeckCount();
+    }
+
+    // Remove a card from the deck by id (removes one instance)
+    function removeFromDeck(id) {
+        const idx = deck.findIndex(c => c.id === id);
+        if (idx >= 0) {
+            deck.splice(idx, 1);
+            renderDeckList();
+            updateDeckCount();
+        }
+    }
+
+    // Render the deck list as horizontal items with rarity backgrounds
+    function renderDeckList() {
+        const list = document.getElementById('deck-list');
+        list.innerHTML = '';
+        if (deck.length === 0) {
+            list.innerHTML = '<p>Kaladė tuščia.</p>';
+            updateCharts();
+            updateDeckCount();
+            return;
+        }
+        // Group duplicates to show counts. Use id if present, else name as key.
+        const grouped = {};
+        deck.forEach(card => {
+            const key = card.id != null ? card.id : card.name;
+            if (!grouped[key]) {
+                grouped[key] = { card: card, count: 0 };
+            }
+            grouped[key].count += 1;
+        });
+        Object.values(grouped).forEach(entry => {
+            const card = entry.card;
+            const rarityClass = card.rarity ? 'rarity-' + slugifyRarity(card.rarity) : '';
+            const item = document.createElement('div');
+            item.classList.add('deck-list-item');
+            if (rarityClass) item.classList.add(rarityClass);
+            // Name with count if more than one
+            const countSuffix = entry.count > 1 ? ` x ${entry.count}` : '';
+            item.innerHTML = `<span>${card.name}${countSuffix}</span><span class="remove-btn">&times;</span>`;
+            // Hover to preview (do not clear on item mouseleave; preview will clear when leaving the deck list)
+            item.addEventListener('mouseover', () => showDeckPreview(card));
+            // Remove on click of remove button
+            item.querySelector('.remove-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Find index of matching card (by id if present, else by name)
+                const idx = deck.findIndex(c => {
+                    if (card.id != null && c.id != null) return c.id === card.id;
+                    return c.name === card.name;
+                });
+                if (idx > -1) removeFromDeck(deck[idx].id);
+            });
+            list.appendChild(item);
+        });
+        updateCharts();
+        // Clear preview when leaving the entire deck list
+        list.addEventListener('mouseleave', clearDeckPreview);
+        updateDeckCount();
+    }
+
+    // Update the deck count indicator next to the heading
+    function updateDeckCount() {
+        const countEl = document.getElementById('deckCount');
+        if (countEl) {
+            countEl.textContent = `(${deck.length}/40)`;
+        }
+    }
+
+    // Show the card image in the preview container when hovering over deck items
+    function showDeckPreview(card) {
+        const preview = document.getElementById('deck-preview');
+        // If the card has an associated image, display only the artwork centered
+        if (card.image) {
+            preview.innerHTML = `<img src="${card.image}" alt="${card.name}">`;
+        } else {
+            // Otherwise, clear the preview
+            preview.innerHTML = '';
+        }
+    }
+    function clearDeckPreview() {
+        const preview = document.getElementById('deck-preview');
+        preview.innerHTML = '';
+    }
+
+    // Update bar charts to reflect the current deck composition
+    function updateCharts() {
+        const costCounts = {};
+        const attackCounts = {};
+        const hpCounts = {};
+        const typeCounts = {};
+        deck.forEach(card => {
+            const c = card.cost ?? 'N/A';
+            costCounts[c] = (costCounts[c] || 0) + 1;
+            const a = card.attack ?? 'N/A';
+            attackCounts[a] = (attackCounts[a] || 0) + 1;
+            const h = card.hp ?? 'N/A';
+            hpCounts[h] = (hpCounts[h] || 0) + 1;
+            const t = card.type || 'N/A';
+            typeCounts[t] = (typeCounts[t] || 0) + 1;
+        });
+        // Helper to sort numeric keys then non-numeric
+        function getSortedEntries(obj) {
+            const numeric = [];
+            const nonNumeric = [];
+            Object.keys(obj).forEach(k => {
+                if (k !== 'N/A' && !isNaN(k)) numeric.push(Number(k)); else nonNumeric.push(k);
+            });
+            numeric.sort((a, b) => a - b);
+            nonNumeric.sort();
+            return numeric.concat(nonNumeric).map(k => String(k)).map(k => [k, obj[k] || 0]);
+        }
+        const costEntries = getSortedEntries(costCounts);
+        const attackEntries = getSortedEntries(attackCounts);
+        const hpEntries = getSortedEntries(hpCounts);
+        costChart = createOrUpdateBarChart(costChart, 'costChart', costEntries, 'Kaina');
+        attackChart = createOrUpdateBarChart(attackChart, 'attackChart', attackEntries, 'Ataka');
+        hpChart = createOrUpdateBarChart(hpChart, 'hpChart', hpEntries, 'Gyvybės');
+        // Card type distribution
+        const typeEntries = Object.keys(typeCounts).sort().map(k => [k, typeCounts[k]]);
+        typeChart = createOrUpdateBarChart(typeChart, 'typeChart', typeEntries, 'Tipas');
+    }
+    async function applyFilters() {
+        // Always fetch the latest cards from storage when filtering so newly added cards are included
+        const cardsInStorage = await loadCards();
+        const criteria = {
+            search: document.getElementById('search').value,
+            faction: document.getElementById('faction').value,
+            cost: parseFilterValues(document.getElementById('cost').value),
+            rarity: document.getElementById('rarity').value,
+            type: document.getElementById('type').value,
+            attack: parseFilterValues(document.getElementById('attack').value),
+            hp: parseFilterValues(document.getElementById('hp').value)
+        };
+        const filtered = filterCards(cardsInStorage, criteria);
+        renderCards(filtered);
+    }
+    async function resetFilters() {
+        document.getElementById('filterForm').reset();
+        const cards = await loadCards();
+        renderCards(cards);
+    }
+    // Initialize page
+    initNav();
+    // Load all cards from storage and set up lists
+    (async () => {
+        const cards = await loadCards();
+        renderCards(cards);
+        renderDeckList();
+    })();
+    // Trigger filtering when pressing Enter in search input
+    document.getElementById('search').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            applyFilters();
+        }
+    });
+    // Also trigger filtering when pressing Enter anywhere in the filter form
+    document.getElementById('filterForm').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            applyFilters();
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+/* Shared styles for Ravenof static site */
+
+/*
+ * Modernized styles for the Ravenof card database.
+ * The UI adopts a light, airy feel with subtle shadows and rounded corners.
+ */
+
+/*
+ * Fantasy-themed styles for the Ravenof static site.
+ * Uses a mystical background, ornate card frames and a rich colour palette.
+ */
+
+body {
+    padding-bottom: 50px;
+    background-image: url('assets/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #f5f2e9;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* Navigation bar styling */
+.navbar {
+    background-color: rgba(30, 20, 50, 0.85) !important;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.navbar-brand {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    color: #d4af37 !important;
+}
+.nav-link {
+    color: #f5f2e9 !important;
+}
+.nav-link.active {
+    color: #d4af37 !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #71448d;
+    border-color: #71448d;
+}
+.btn-primary:hover {
+    background-color: #5c3672;
+    border-color: #5c3672;
+}
+.btn-secondary {
+    background-color: #4b3b67;
+    border-color: #4b3b67;
+}
+.btn-secondary:hover {
+    background-color: #3a2f52;
+    border-color: #3a2f52;
+}
+.btn-success {
+    background-color: #3a855f;
+    border-color: #3a855f;
+}
+.btn-success:hover {
+    background-color: #2e6849;
+    border-color: #2e6849;
+}
+.btn-danger {
+    background-color: #b0413e;
+    border-color: #b0413e;
+}
+.btn-danger:hover {
+    background-color: #8f3332;
+    border-color: #8f3332;
+}
+.btn-outline-danger {
+    color: #b0413e;
+    border-color: #b0413e;
+}
+.btn-outline-danger:hover {
+    color: #f5f2e9;
+    background-color: #b0413e;
+}
+
+/* Scrollable lists */
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.deck-list {
+    max-height: 50vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Container backgrounds with translucent overlay for contrast */
+.container {
+    background-color: rgba(30, 20, 50, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+}
+/* Card containers for card lists and deck entries */
+.card-item,
+.deck-card {
+    position: relative;
+    /* Vertical poker‑sized cards (approx 2.5:3.5 ratio) */
+    width: 220px;
+    min-height: 340px;
+    background-image: url('assets/card_frame.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #2e1b47;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card-item:hover,
+.deck-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.deck-card .remove-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 0.9rem;
+    color: #b0413e;
+    cursor: pointer;
+}
+
+/* Larger, more visible remove button for deck cards */
+.deck-card .btn-remove {
+    background-color: #b0413e;
+    border-color: #b0413e;
+    color: #f5f2e9;
+    font-weight: bold;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+}
+.deck-card .btn-remove:hover {
+    background-color: #8f3332;
+    border-color: #8f3332;
+    color: #ffffff;
+}
+
+/* Thumbnail image styling */
+.card-image-thumb {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+/* Card title styling */
+.card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: #2e1b47;
+    margin-bottom: 0.25rem;
+}
+
+/* Card content backgrounds for better readability on textured frame */
+.card-item ul,
+.card-item small,
+.deck-card small {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    padding: 4px;
+    display: inline-block;
+}
+
+/* Ensure card names and strong text stand out over ornate backgrounds */
+.card-item h5,
+.card-item h6,
+.deck-card strong {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    padding: 4px;
+    display: inline-block;
+    color: #2e1b47;
+}
+
+/* Hide number input spinners */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Chart wrapper styling: use ornate parchment background for deck statistics */
+.chart-wrapper {
+    position: relative;
+    background-image: url('assets/scroll_bg.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.chart-wrapper canvas {
+    background-color: rgba(30, 20, 50, 0.6);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Preview area styling in deck builder */
+#cardPreview {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Deck preview area in unified page */
+#deck-preview {
+    /* Provide space for the previewed card */
+    min-height: 360px;
+    display: flex;
+    /* Center the preview image both horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    /* Distinct background to make the preview visible against dark backdrop */
+    background-image: url('assets/scroll_bg.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#deck-preview .card-item {
+    width: 220px;
+    height: 350px;
+    margin: 0;
+}
+
+/* Preview image styling: show only the card artwork centered in the preview area */
+#deck-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+}
+#cardPreview .card-item {
+    /* Maintain card size for preview */
+    width: 220px;
+    margin: 0;
+}
+
+/* ------------------------------------------------------------------- */
+/* Redesigned card layout for a professional appearance
+ *
+ * Cards are composed of two stacked sections:
+ *  - .card-top   : holds the artwork or uploaded image and occupies
+ *                  roughly the top half of the card.
+ *  - .card-bottom: holds the card name, attributes and buttons on a
+ *                  light parchment background.  It occupies the lower
+ *                  portion of the card and scrolls if content overflows.
+ *
+ * The entire card uses the ornate frame graphic as its outer border.
+ */
+
+/* Base styles for card containers */
+/*
+ * Base styles for card containers
+ *
+ * Allow the card height to expand naturally so that all card details can be
+ * displayed without a scroll bar. A minimum height preserves the poker‑like
+ * proportions on larger screens. The ornate frame background (applied via
+ * rarity classes) still covers the entire container.
+ */
+.card-item,
+.deck-card {
+    position: relative;
+    width: 220px;
+    height: auto;
+    min-height: 350px;
+    /* The background image (frame) is assigned based on card rarity classes. */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+/* Top section for card artwork */
+/* Top section for card artwork */
+.card-item .card-top,
+.deck-card .card-top {
+    width: 100%;
+    /* Increase height to show more of the artwork */
+    height: 60%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Artwork images fill the top section */
+/* Ensure artwork images maintain their aspect ratio without cropping */
+.card-item .card-top img,
+.deck-card .card-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Placeholder for missing artwork */
+.card-item .card-top .placeholder,
+.deck-card .card-top .placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Bottom section for card details and actions */
+/* Bottom section for card details and actions
+ * Split into info and action so that the "Pridėti" button remains visible
+ */
+.card-item .card-bottom,
+.deck-card .card-bottom {
+    width: 100%;
+    /* Remove fixed height so the bottom section grows to fit its content fully */
+    background-color: rgba(255, 250, 240, 0.9);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+/* Info area inside the bottom of the card: scrolls separately */
+/*
+ * The information area should not scroll. Remove flex growth and overflow
+ * so that it sizes itself based on its contents. This allows all card
+ * attributes to be visible without scrolling.
+ */
+.card-item .card-bottom .card-info,
+.deck-card .card-bottom .card-info {
+    flex-grow: 0;
+    overflow-y: visible;
+}
+/* Action button stays at the bottom of the card */
+.card-item .card-bottom .card-action-btn,
+.deck-card .card-bottom .card-action-btn {
+    align-self: flex-start;
+    margin-top: 4px;
+}
+
+/* Card title styling */
+.card-item .card-bottom h5,
+.deck-card .card-bottom h5 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: #2e1b47;
+    margin: 0 0 0.5rem 0;
+}
+
+/* List of attributes */
+.card-item .card-bottom ul,
+.deck-card .card-bottom ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+.card-item .card-bottom li,
+.deck-card .card-bottom li {
+    margin: 0 0 3px 0;
+    color: #2e1b47;
+    font-size: 0.88rem;
+}
+.card-item .card-bottom strong,
+.deck-card .card-bottom strong {
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+/* Buttons inside the bottom section */
+.card-item .card-bottom .btn,
+.deck-card .card-bottom .btn {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    align-self: flex-start;
+}
+
+/* Prevent text selection on cards */
+.card-item *, .deck-card * {
+    user-select: none;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+    .row > .col-lg-5,
+    .row > .col-lg-7 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .card-item,
+    .deck-card {
+        width: 100%;
+        height: auto;
+    }
+    .card-item .card-top,
+    .deck-card .card-top {
+        height: 50vw;
+    }
+    .card-item .card-bottom,
+    .deck-card .card-bottom {
+        height: auto;
+    }
+    .deck-list {
+        max-height: none;
+    }
+    .chart-wrapper {
+        margin-bottom: 1.5rem;
+    }
+    .container {
+        padding: 15px;
+    }
+}
+
+/* Rarity-based backgrounds for cards and deck items */
+/* Assign colored backgrounds based on slugified rarity names */
+.card-item.rarity-paprastas,
+.deck-card.rarity-paprastas,
+.deck-list-item.rarity-paprastas {
+    background-image: url('assets/bg_common.png');
+}
+.card-item.rarity-magiskas,
+.deck-card.rarity-magiskas,
+.deck-list-item.rarity-magiskas {
+    background-image: url('assets/bg_magick.png');
+}
+.card-item.rarity-unikalus,
+.deck-card.rarity-unikalus,
+.deck-list-item.rarity-unikalus {
+    background-image: url('assets/bg_unique.png');
+}
+.card-item.rarity-episkas,
+.deck-card.rarity-episkas,
+.deck-list-item.rarity-episkas {
+    background-image: url('assets/bg_epic.png');
+}
+.card-item.rarity-legendinis,
+.deck-card.rarity-legendinis,
+.deck-list-item.rarity-legendinis {
+    background-image: url('assets/bg_legend.png');
+}
+
+/* Horizontal deck list item styling */
+.deck-list-item {
+    width: 100%;
+    /* Make deck list items more compact */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    color: #f5f2e9;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.1s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    /* Ensure rarity backgrounds cover the entire item and remain centered */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.deck-list-item:hover {
+    transform: translateX(5px);
+}
+
+/* Deck count indicator */
+.deck-count {
+    font-size: 0.85rem;
+    color: #d4c6e7;
+    margin-left: 0.5rem;
+}
+
+/* Deck list container and preview styling */
+#deck-list {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.preview-container {
+    width: 100%;
+    height: 360px;
+    overflow: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+.preview-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}

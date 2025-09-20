@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kortos forma</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google fonts for fantasy vibe -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Ravenof</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Unified navigation: only show a single link back to the card list/deck builder page -->
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kaladės kūrėjas</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="admin.html">Admin</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="handleLogout(event)">Atsijungti</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 id="formTitle" class="mb-4">Kortos forma</h2>
+        <form id="cardForm" onsubmit="return handleSubmit(event)">
+            <div class="mb-3">
+                <label class="form-label">Pavadinimas</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">Kaina</label>
+                    <select class="form-select" id="cost">
+                        <option value="">Pasirinkite</option>
+                        <option>100</option>
+                        <option>200</option>
+                        <option>300</option>
+                        <option>400</option>
+                        <option>500</option>
+                        <option>600</option>
+                        <option>700</option>
+                        <option>800</option>
+                        <option>900</option>
+                        <option>1000</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-3" id="attackGroup">
+                    <label class="form-label">Ataka</label>
+                    <input type="number" class="form-control" id="attack" min="0">
+                </div>
+                <div class="col-md-3 mb-3" id="hpGroup">
+                    <label class="form-label">Gyvybės</label>
+                    <input type="number" class="form-control" id="hp" min="0">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">Retumas</label>
+                    <select class="form-select" id="rarity">
+                        <option value="">Pasirinkite</option>
+                        <option>Paprastas</option>
+                        <option>Magiškas</option>
+                        <option>Unikalus</option>
+                        <option>Epiškas</option>
+                        <option>Legendinis</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Tipas</label>
+                    <select class="form-select" id="type">
+                        <option value="">Pasirinkite</option>
+                        <option>Burtas</option>
+                        <option>Reakcija</option>
+                        <option>Prakeiksmas</option>
+                        <option>Veikėjas</option>
+                        <option>Artefaktas</option>
+                        <option>Čempionas</option>
+                        <option>Laukas</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Frakcija</label>
+                    <select class="form-select" id="faction">
+                        <option value="">Pasirinkite</option>
+                        <option>Inkvizicijos legionas</option>
+                        <option>Mistikos melodija</option>
+                        <option>Šviesos pulkas</option>
+                        <option>Rytų vėjas</option>
+                        <option>Mirties maršas</option>
+                        <option>Demonų orda</option>
+                        <option>Vryhiok'o gauja</option>
+                        <option>Plėšikų naktis</option>
+                        <option>Neutralūs</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Efektas</label>
+                <textarea class="form-control" id="effect" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nuotrauka</label>
+                <input type="file" class="form-control" id="imageInput" accept="image/*">
+                <div class="mt-2" id="imagePreview"></div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submitBtn">Išsaugoti</button>
+            <a href="admin.html" class="btn btn-secondary ms-2">Atšaukti</a>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    function handleLogout(event) {
+        event.preventDefault();
+        logout();
+        window.location.href = 'index.html';
+    }
+    function ensureAdmin() {
+        if (!isAdminLoggedIn()) {
+            window.location.href = 'login.html';
+        }
+    }
+    // Read query params
+    function getQueryParams() {
+        const params = {};
+        const queryString = window.location.search.substring(1);
+        const pairs = queryString.split('&');
+        pairs.forEach(pair => {
+            if (!pair) return;
+            const [key, value] = pair.split('=');
+            params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+        });
+        return params;
+    }
+    let editingId = null;
+    let existingImage = null;
+    let imageDataUrl = null;
+    // Handle image input changes
+    const imageInput = document.getElementById('imageInput');
+    if (imageInput) {
+        imageInput.addEventListener('change', function () {
+            const file = this.files && this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imageDataUrl = e.target.result;
+                    document.getElementById('imagePreview').innerHTML = `<img src="${imageDataUrl}" class="img-thumbnail" style="max-height:200px;">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+    async function populateForm() {
+        const params = getQueryParams();
+        if (params.id) {
+            editingId = parseInt(params.id, 10);
+            const cards = await getCards();
+            const card = cards.find(c => c.id === editingId);
+            if (card) {
+                document.getElementById('formTitle').textContent = 'Redaguoti kortą';
+                document.getElementById('submitBtn').textContent = 'Atnaujinti';
+                document.getElementById('name').value = card.name;
+                document.getElementById('cost').value = card.cost ?? '';
+                document.getElementById('attack').value = card.attack ?? '';
+                document.getElementById('hp').value = card.hp ?? '';
+                document.getElementById('rarity').value = card.rarity || '';
+                document.getElementById('type').value = card.type || '';
+                document.getElementById('faction').value = card.faction || '';
+                document.getElementById('effect').value = card.effect || '';
+                existingImage = card.image || null;
+                if (existingImage) {
+                    imageDataUrl = existingImage;
+                    document.getElementById('imagePreview').innerHTML = `<img src="${existingImage}" class="img-thumbnail" style="max-height:200px;">`;
+                }
+            }
+        }
+    }
+    function handleSubmit(event) {
+        event.preventDefault();
+        const costVal = document.getElementById('cost').value;
+        const typeVal = document.getElementById('type').value.trim();
+        // Determine attack/hp values only for allowed types
+        let attackVal = null;
+        let hpVal = null;
+        if (typeVal === 'Veikėjas') {
+            attackVal = document.getElementById('attack').value ? parseInt(document.getElementById('attack').value) : null;
+            hpVal = document.getElementById('hp').value ? parseInt(document.getElementById('hp').value) : null;
+        } else if (typeVal === 'Čempionas' || typeVal === 'Artefaktas') {
+            // These types only have HP
+            hpVal = document.getElementById('hp').value ? parseInt(document.getElementById('hp').value) : null;
+        }
+        const card = {
+            name: document.getElementById('name').value.trim(),
+            cost: costVal ? parseInt(costVal) : null,
+            attack: attackVal,
+            hp: hpVal,
+            rarity: document.getElementById('rarity').value.trim(),
+            type: typeVal,
+            faction: document.getElementById('faction').value.trim(),
+            effect: document.getElementById('effect').value.trim(),
+            image: imageDataUrl || existingImage || null
+        };
+        if (editingId !== null) {
+            card.id = editingId;
+            updateCard(card);
+        } else {
+            addCard(card);
+        }
+        window.location.href = 'admin.html';
+        return false;
+    }
+    ensureAdmin();
+    populateForm();
+
+    // Show or hide Attack and HP fields based on selected Type
+    const typeSelectEl = document.getElementById('type');
+    const attackGroupEl = document.getElementById('attackGroup');
+    const hpGroupEl = document.getElementById('hpGroup');
+    function updateFieldVisibility() {
+        const val = typeSelectEl.value;
+        // Attack visible only for Veikėjas
+        if (val === 'Veikėjas') {
+            attackGroupEl.style.display = '';
+        } else {
+            attackGroupEl.style.display = 'none';
+            document.getElementById('attack').value = '';
+        }
+        // HP visible for Veikėjas, Čempionas, Artefaktas
+        if (val === 'Veikėjas' || val === 'Čempionas' || val === 'Artefaktas') {
+            hpGroupEl.style.display = '';
+        } else {
+            hpGroupEl.style.display = 'none';
+            document.getElementById('hp').value = '';
+        }
+    }
+    typeSelectEl.addEventListener('change', updateFieldVisibility);
+    // Initialize field visibility on page load
+    updateFieldVisibility();
+    </script>
+</body>
+</html>

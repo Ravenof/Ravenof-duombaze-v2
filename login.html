@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prisijungimas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google fonts for fantasy vibe -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Ravenof</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Kortos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="deck.html">Kaladė</a></li>
+                    <li class="nav-item" id="adminNavItem" style="display: none;"><a class="nav-link" href="admin.html">Admin</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item" id="loginNavItem"><a class="nav-link active" href="login.html">Prisijungti</a></li>
+                    <li class="nav-item" id="logoutNavItem" style="display: none;"><a class="nav-link" href="#" onclick="handleLogout(event)">Atsijungti</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <h2 class="mb-4">Administratorius prisijungimas</h2>
+                <div id="errorMsg" class="alert alert-danger" role="alert" style="display:none;"></div>
+                <form onsubmit="return handleLogin(event)">
+                    <div class="mb-3">
+                        <label class="form-label">Vartotojo vardas</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Slaptažodis</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Prisijungti</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    function initNavLogin() {
+        if (isAdminLoggedIn()) {
+            document.getElementById('adminNavItem').style.display = 'block';
+            document.getElementById('loginNavItem').style.display = 'none';
+            document.getElementById('logoutNavItem').style.display = 'block';
+        } else {
+            document.getElementById('adminNavItem').style.display = 'none';
+            document.getElementById('loginNavItem').style.display = 'block';
+            document.getElementById('logoutNavItem').style.display = 'none';
+        }
+    }
+    function handleLogout(event) {
+        event.preventDefault();
+        logout();
+        initNavLogin();
+        window.location.href = 'index.html';
+    }
+    function handleLogin(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        if (login(username, password)) {
+            // redirect to admin page
+            window.location.href = 'admin.html';
+        } else {
+            const errorDiv = document.getElementById('errorMsg');
+            errorDiv.textContent = 'Neteisingas prisijungimo vardas arba slaptažodis.';
+            errorDiv.style.display = 'block';
+        }
+        return false;
+    }
+    initNavLogin();
+    </script>
+</body>
+</html>

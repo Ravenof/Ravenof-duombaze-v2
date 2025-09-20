@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Svantonas Lazaras",
+    "cost": 800,
+    "attack": 5,
+    "hp": 6,
+    "rarity": "Legendinis",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - priešininko ėjimo pradžioje iš jo pavagia 200 monetų. Suteikia sau +1 ATK, +1HP.",
+    "image": "assets/cards/1_svantonas_lazaras.png",
+    "id": 59
+  },
+  {
+    "name": "Žiežarė Varnė",
+    "cost": 700,
+    "attack": 6,
+    "hp": 3,
+    "rarity": "Epiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - Priešininko ėjimo pradžioje iš jo pavagia -100 monetų. Draugiški žaidėjai kas kartą traukia po kortą.",
+    "image": "assets/cards/2__ie_ar_varn_.png",
+    "id": 64
+  },
+  {
+    "name": "Prakeiktasis Džimis",
+    "cost": 500,
+    "attack": 5,
+    "hp": 4,
+    "rarity": "Legendinis",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - sunaikinti draugiški piratų tipo veikėjai keliauja ne į kapinyną o į kaladės apačią.",
+    "image": "assets/cards/2_prakeiktasis_d_imis.png",
+    "id": 60
+  },
+  {
+    "name": "Liucijus Marikas",
+    "cost": 800,
+    "attack": 4,
+    "hp": 14,
+    "rarity": "Legendinis",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - padaro užnuodytas visiems veikėjams kurie jį atakuoja.",
+    "image": "assets/cards/3_liucijus_marikas.png",
+    "id": 61
+  },
+  {
+    "name": "Morganas Greivsas",
+    "cost": 700,
+    "attack": 6,
+    "hp": 8,
+    "rarity": "Legendinis",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Sprintas. Kovos šūksnis - sunaikina pasirinktą veikėją, iki ėjimo pabaigos suteikia jo atakos taškus sau.",
+    "image": "assets/cards/4_morganas_greivsas.png",
+    "id": 62
+  },
+  {
+    "name": "Grizmas Šmėklinis",
+    "cost": 600,
+    "attack": 4,
+    "hp": 4,
+    "rarity": "Epiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Kovos šūksnis - padaro 0/-2 pasirinktam veikėjui arba artefaktui, jei jis sunaikinamas šiam ėjimui gaunate +100 monetų.",
+    "image": "assets/cards/5_grizmas_m_klinis.png",
+    "id": 63
+  },
+{
+    "name": "Juodmūšis Žiaurusis",
+    "cost": 700,
+    "attack": 7,
+    "hp": 5,
+    "rarity": "Epiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Kovos šūksnis - suteikia 100 monetų ir kortos traukimą. Paskutinis noras - suteikia kortos traukimą.",
+    "image": "assets/cards/1_juodm_is_iaurusis.png",
+    "id": 65
+  },
+  {
+    "name": "Kapitonas Juodragis",
+    "cost": 900,
+    "attack": 8,
+    "hp": 9,
+    "rarity": "Epiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - kai šis veikėjas padaro žalą kitam veikėjui traukite kortą. Paskutinis noras visi žaidėjai patiria -2HP.",
+    "image": "assets/cards/2_kapitonas_juodragis.png",
+    "id": 66
+  },
+  {
+    "name": "Krofordas Rūstusis",
+    "cost": 800,
+    "attack": 7,
+    "hp": 9,
+    "rarity": "Epiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pašišaipymas. Kovos šūksnis - sunaikina priešininko veikėją arba artefaktą.",
+    "image": "assets/cards/3_krofordas_r_stusis.png",
+    "id": 67
+  },
+  {
+    "name": "Saimonas Goldinis",
+    "cost": 600,
+    "attack": 6,
+    "hp": 5,
+    "rarity": "Epiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Kovos šūksnis - išmesk iki 3 viršutinių savo kaladės kortų į kapinyną. Už kiekvieną gauk 200 monetų.",
+    "image": "assets/cards/4_saimonas_goldinis.png",
+    "id": 68
+  },
+  {
+    "name": "Kapitono teleskopas",
+    "cost": 500,
+    "attack": null,
+    "hp": 6,
+    "rarity": "Unikalus",
+    "type": "Artefaktas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - priešininkų veikėjų iškvietimas kainuoja +100 monetų brangiau. jūsų -100 monetų pigiau.",
+    "image": "assets/cards/5_kapitono_teleskopas.png",
+    "id": 69
+  }
+
+]
