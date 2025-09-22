@@ -512,3 +512,38 @@ input[type=number]::-webkit-outer-spin-button {
     display: block;
     border-radius: 8px;
 }
+/* --- OVERRIDE: kortos lygiavimas nuo viršaus --- */
+.card-item,
+.deck-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;       /* vietoj space-between */
+}
+
+/* mygtukas apačioje, bet tekstas nesistumia žemyn */
+.card-item .card-bottom .card-action-btn,
+.deck-card .card-bottom .card-action-btn {
+  margin-top: auto;                   /* mygtukas „Pridėti“ prilimpa prie apačios */
+}
+
+/* kortų tinklelis – elementai rikiuojami nuo viršaus */
+.card-list {
+  align-items: flex-start;            /* kad skirtingo aukščio kortos nesilygiuotų prie apačios */
+}
+
+/* jeigu miniatiūra kirpo vaizdą – rodyti visą paveiksliuką */
+.card-image-thumb {
+  object-fit: contain;                /* buvo cover – kirpdavo; contain nerėžia */
+}
+
+/* (nebūtina, bet naudinga) – kortos informacija nescrollina ir „nešokinėja“ */
+.card-item .card-bottom,
+.deck-card .card-bottom {
+  display: flex;
+  flex-direction: column;
+}
+.card-item .card-bottom .card-info,
+.deck-card .card-bottom .card-info {
+  flex-grow: 0;
+  overflow: visible;
+}
