@@ -453,7 +453,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Kovos šūksnis - kitam piratų tipo veikėjui kovos lauke suteikia +2/0.",
     "image": "assets/cards/27_kapitonas_kernis.png",
-    "id": 27
+    "id": 97
   },
   {
     "name": "Irga Įžūlė",
@@ -465,7 +465,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Sėlinimas",
     "image": "assets/cards/28_irga_l_.png",
-    "id": 28
+    "id": 97
   },
   {
     "name": "Apsukrusis Drakšlys",
@@ -477,7 +477,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Pasišaipymas",
     "image": "assets/cards/29_apsukrusis_drak_lys.png",
-    "id": 29
+    "id": 99
   },
   {
     "name": "Laivo apskaita",
@@ -489,7 +489,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Šį ėjimą visos kortos kainuoja 100 monetų pigiau.",
     "image": "assets/cards/30_laivo_apskaita.png",
-    "id": 30
+    "id": 100
   },
   {
     "name": "Gluodas Gilunis",
@@ -501,7 +501,7 @@
     "faction": "Plėšikų naktis",
     "effect": "",
     "image": "assets/cards/31_gluodas_gilunis.png",
-    "id": 31
+    "id": 101
   },
   {
     "name": "Mirtulė Aura",
@@ -513,7 +513,7 @@
     "faction": "Plėšikų naktis",
     "effect": "",
     "image": "assets/cards/32_mirtul_aura.png",
-    "id": 32
+    "id": 102
   },
   {
     "name": "Dargis Ištras",
@@ -525,7 +525,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Sprintas",
     "image": "assets/cards/33_dargis_i_tras.png",
-    "id": 33
+    "id": 103
   },
   {
     "name": "Lutis Dolcas",
@@ -537,6 +537,150 @@
     "faction": "Plėšikų naktis",
     "effect": "",
     "image": "assets/cards/34_lutis_dolcas.png",
-    "id": 34
+    "id": 104
+  },
+   {
+    "name": "Gelgaudas Audra",
+    "cost": 700,
+    "attack": 6,
+    "hp": 5,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasišaipymas",
+    "image": "assets/cards/39_gelgaudas_audra.png",
+    "id": 105
+  },
+  {
+    "name": "Piratas Marodierius",
+    "cost": 300,
+    "attack": 2,
+    "hp": 1,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Sprintas",
+    "image": "assets/cards/40_piratas_marodierius.png",
+    "id": 106
+  },
+  {
+    "name": "Belmontas Semas",
+    "cost": 400,
+    "attack": 5,
+    "hp": 1,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Sprintas",
+    "image": "assets/cards/41_belmontas_semas.png",
+    "id": 107
+  },
+  {
+    "name": "Egzekucija",
+    "cost": 200,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Burtas",
+    "faction": "Plėšikų naktis",
+    "effect": "Sunaikina pasirinktą sužeistą veikėją.",
+    "image": "assets/cards/42_egzekucija.png",
+    "id": 108
+  },
+  {
+    "name": "Piratas raitelis",
+    "cost": 300,
+    "attack": 3,
+    "hp": 1,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Sprintas",
+    "image": "assets/cards/43_piratas_raitelis.png",
+    "id": 109
+  },
+  {
+    "name": "Kuršas Žaibas",
+    "cost": 500,
+    "attack": 2,
+    "hp": 3,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - naujai iškviesti draugiški veikėjai su 3 ar mažiau atakos įgauna sprintas.",
+    "image": "assets/cards/44_kur_as_aibas.png",
+    "id": 110
+  },
+  {
+    "name": "Piratas žvalgas",
+    "cost": 100,
+    "attack": 1,
+    "hp": 1,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "",
+    "image": "assets/cards/45_piratas_valgas.png",
+    "id": 111
+  },
+  {
+    "name": "Leisk man!",
+    "cost": 200,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Burtas",
+    "faction": "Plėšikų naktis",
+    "effect": "Žaidėjas vieną kartą gali pulti tiesiogiai padarydamas 0/-4. Tačiau gauna atgalinę žalą.",
+    "image": "assets/cards/46_leisk_man_.png",
+    "id": 112
+  },
+  {
+    "name": "Pirmyn!",
+    "cost": 300,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Burtas",
+    "faction": "Plėšikų naktis",
+    "effect": "Suteikia pasirinktam veikėjui sprintas ir +2/0.",
+    "image": "assets/cards/47_pirmyn_.png",
+    "id": 113
+  },
+  {
+    "name": "Kapitonas Juodasmakris (I fazė)",
+    "cost": 600,
+    "attack": null,
+    "hp": 12,
+    "rarity": "Unikalus",
+    "type": "Čempionas",
+    "faction": "Plėšikų naktis",
+    "effect": "Gebėjimas I - suteikia + 100 monetų šiam ėjimui.\nGebėjimas II Paaukok -200 monetų ir padaryk 0/-4 pasirinktam veikėjui, čempionui arba artefaktui.\nGebėjimas III Sunaikina pasirinktą priešininko veikėja jei jis turi nei 2 arba mažiau gyvybės taškus",
+    "image": "assets/cards/48_kapitonas_juodasmakris_i_faz_.png",
+    "id": 114
+  },
+  {
+    "name": "Kapitonas Juodasmakris (II fazė)",
+    "cost": 700,
+    "attack": null,
+    "hp": 15,
+    "rarity": "Epiškas",
+    "type": "Čempionas",
+    "faction": "Plėšikų naktis",
+    "effect": "Gebėjimas I - suteikia + 200 monetų šiam ėjimui.\nGebėjimas II Paaukok -300 monetų ir padaryk 0/-6 pasirinktam veikėjui, čempionui arba artefaktui.\nGebėjimas III Sunaikina pasirinktą priešininko veikėja jei jis turi nei 3 arba mažiau gyvybės taškus",
+    "image": "assets/cards/49_kapitonas_juodasmakris_ii_faz_.png",
+    "id": 115
+  },
+  {
+    "name": "Kapitonas Juodasmakris (III fazė)",
+    "cost": 800,
+    "attack": null,
+    "hp": 19,
+    "rarity": "Legendinis",
+    "type": "Čempionas",
+    "faction": "Plėšikų naktis",
+    "effect": "Gebėjimas I - suteikia + 300 monetų šiam ėjimui.\nGebėjimas II Paaukok -400 monetų ir padaryk 0/-8 pasirinktam veikėjui, čempionui arba artefaktui.\nGebėjimas III Sunaikina pasirinktą priešininko veikėja jei jis turi nei 3 arba mažiau gyvybės taškus",
+    "image": "assets/cards/50_kapitonas_juodasmakris_iii_faz_.png",
+    "id": 116
   }
 ]
