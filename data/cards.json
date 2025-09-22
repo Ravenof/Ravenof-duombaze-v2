@@ -1174,5 +1174,113 @@
     "effect": "Sprintas",
     "image": "assets/cards/91_alfa_pragaro_skalikas.png",
     "id": 41
+  },
+{
+    "name": "Pragaro vartų sargas",
+    "cost": 600,
+    "attack": 5,
+    "hp": 7,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "",
+    "image": "assets/cards/92_pragaro_vart_sargas.png",
+    "id": 42
+  },
+  {
+    "name": "Velniūkštis",
+    "cost": 100,
+    "attack": 1,
+    "hp": 1,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "",
+    "image": "assets/cards/93_velni_k_tis.png",
+    "id": 43
+  },
+  {
+    "name": "Khem’as",
+    "cost": 100,
+    "attack": 3,
+    "hp": 1,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "",
+    "image": "assets/cards/94_khem_as.png",
+    "id": 44
+  },
+  {
+    "name": "Mirofalg’as",
+    "cost": 500,
+    "attack": 4,
+    "hp": 6,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Apsvaiginimas",
+    "image": "assets/cards/95_mirofalg_as.png",
+    "id": 45
+  },
+  {
+    "name": "Pelkių velnias",
+    "cost": 200,
+    "attack": 2,
+    "hp": 2,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Užnuodyjimas",
+    "image": "assets/cards/96_pelki_velnias.png",
+    "id": 46
+  },
+  {
+    "name": "Demoniškas maras",
+    "cost": 200,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Burtas",
+    "faction": "Demonų orda",
+    "effect": "Padaro pasirinktam veikėjui -2/-2 ir užnuodytas.",
+    "image": "assets/cards/97_demoni_kas_maras.png",
+    "id": 47
+  },
+  {
+    "name": "Demonų šmėkla",
+    "cost": 100,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Prakeiksmas padaro priešininko žaidėjui 0/-3.",
+    "image": "assets/cards/98_demon_m_kla.png",
+    "id": 48
+  },
+  {
+    "name": "Demono įgėlimas",
+    "cost": 200,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Sunaikina kovos lauke esantį mažiausiai gyvybės taškų turintį aukos veikėją.",
+    "image": "assets/cards/99_demono_g_limas.png",
+    "id": 49
+  },
+  {
+    "name": "Gobšumas",
+    "cost": 300,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Auka turi išmesti visas rankoje turimas kortas į kapinyną. Iš kaladės traukti tiek pat kortų kiek išmetė.",
+    "image": "assets/cards/100_gob_umas.png",
+    "id": 50
   }
 ]
