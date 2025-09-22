@@ -141,7 +141,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Traukite 2 kortas, jeigu neturite Veikėjų kovos lauke, įgykite 200 monetų.",
     "image": "assets/cards/1_kapitono_paslaptis.png",
-    "id": 1
+    "id": 70
   },
   {
     "name": "Kulvinas Kirvarža",
@@ -153,7 +153,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Pasyvus, kai puola priešininko žaidėją, suteikia savo žaidėjui 100 monetų.",
     "image": "assets/cards/2_kulvinas_kirvar_a.png",
-    "id": 2
+    "id": 71
   },
   {
     "name": "Griausminė Grikštė",
@@ -165,7 +165,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Kovos šūksnis: jei rankoje turite burtų kortą pridedančią arba atimančią monetas, šį ėjimą ją panaudokite nemokamai.",
     "image": "assets/cards/3_griausmin_grik_t_.png",
-    "id": 3
+    "id": 72
   },
   {
     "name": "Kapitono padėjėja",
@@ -177,7 +177,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Kovos šūksnis: jei kaladėje arba rankoje turite “Munčis chebrantas” iškvieskite jį į kovos lauką.",
     "image": "assets/cards/4_kapitono_pad_j_ja.png",
-    "id": 4
+    "id": 73
   },
   {
     "name": "Baltvilis Žiaurusis",
@@ -189,7 +189,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Pasyvus Kai šis veikėjas patiria žalą - įgauna +3/0.",
     "image": "assets/cards/5_baltvilis_iaurusis.png",
-    "id": 5
+    "id": 74
   },
   {
     "name": "Krofordo relikvijos",
@@ -201,7 +201,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Visiems piratų tipo veikėjams kovos lauke suteikia +1/+1. Sinergija su Krofordas Rūstusis suteikia +2/+2.",
     "image": "assets/cards/6_krofordo_relikvijos.png",
-    "id": 6
+    "id": 75
   },
   {
     "name": "Prakeiktas auksas",
@@ -213,7 +213,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Padaro 0/-2 visiems veikėjams kovos lauke. Už kiekvieną paveiktą veikėją , suteikia savo žaidėjui po 100 monetų.",
     "image": "assets/cards/7_prakeiktas_auksas.png",
-    "id": 7
+    "id": 76
   },
   {
     "name": "Gylis Paslaptingasis",
@@ -225,7 +225,7 @@
     "faction": "Plėšikų naktis",
     "effect": "Pasišaipymas. Pasyvus - kai pavagiamos monetos įgyja +2HP.",
     "image": "assets/cards/8_gylis_paslaptingasis.png",
-    "id": "70"
+    "id": "777"
   },
   {
     "name": "Tomis Svydis",
@@ -442,5 +442,101 @@
     "effect": "Pasyvus Visi piratų tipo veikėjai puldami turi +1/0.",
     "image": "assets/cards/22_jungos_plunksna.png",
     "id": 96
+  },
+{
+    "name": "Kapitonas Kernis",
+    "cost": 400,
+    "attack": 5,
+    "hp": 3,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Kovos šūksnis - kitam piratų tipo veikėjui kovos lauke suteikia +2/0.",
+    "image": "assets/cards/27_kapitonas_kernis.png",
+    "id": 27
+  },
+  {
+    "name": "Irga Įžūlė",
+    "cost": 400,
+    "attack": 3,
+    "hp": 2,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Sėlinimas",
+    "image": "assets/cards/28_irga_l_.png",
+    "id": 28
+  },
+  {
+    "name": "Apsukrusis Drakšlys",
+    "cost": 300,
+    "attack": 2,
+    "hp": 2,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasišaipymas",
+    "image": "assets/cards/29_apsukrusis_drak_lys.png",
+    "id": 29
+  },
+  {
+    "name": "Laivo apskaita",
+    "cost": 300,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Burtas",
+    "faction": "Plėšikų naktis",
+    "effect": "Šį ėjimą visos kortos kainuoja 100 monetų pigiau.",
+    "image": "assets/cards/30_laivo_apskaita.png",
+    "id": 30
+  },
+  {
+    "name": "Gluodas Gilunis",
+    "cost": 500,
+    "attack": 5,
+    "hp": 5,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "",
+    "image": "assets/cards/31_gluodas_gilunis.png",
+    "id": 31
+  },
+  {
+    "name": "Mirtulė Aura",
+    "cost": 200,
+    "attack": 2,
+    "hp": 1,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "",
+    "image": "assets/cards/32_mirtul_aura.png",
+    "id": 32
+  },
+  {
+    "name": "Dargis Ištras",
+    "cost": 300,
+    "attack": 2,
+    "hp": 2,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Sprintas",
+    "image": "assets/cards/33_dargis_i_tras.png",
+    "id": 33
+  },
+  {
+    "name": "Lutis Dolcas",
+    "cost": 100,
+    "attack": 1,
+    "hp": 1,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "",
+    "image": "assets/cards/34_lutis_dolcas.png",
+    "id": 34
   }
 ]
