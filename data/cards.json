@@ -1066,5 +1066,113 @@
     "effect": "Sunaikina po brangiausią veikėją abiejuose kovos lauko pusėse. Jų gyvybės taškus prideda prakeiksmo savininko žaidėjui.",
     "image": "assets/cards/82_demoni_ka_akistata.png",
     "id": 32
+  },
+  {
+    "name": "Velnio advokatas",
+    "cost": 600,
+    "attack": 1,
+    "hp": 7,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Sugeria savo žaidėjo patiriamą žalą ir perkelia ją sau.",
+    "image": "assets/cards/83_velnio_advokatas.png",
+    "id": 33
+  },
+  {
+    "name": "Gyvasties išsiurbimas",
+    "cost": 300,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Burtas",
+    "faction": "Demonų orda",
+    "effect": "Padaro 0/-3 veikėjui. Jei veikėjas sunaikinamas, prideda +3/0 pasirinktam kovos lauke esančiam demonų tipo veikėjui.",
+    "image": "assets/cards/84_gyvasties_i_siurbimas.png",
+    "id": 34
+  },
+  {
+    "name": "Demono apgavystė",
+    "cost": 300,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Burtas",
+    "faction": "Demonų orda",
+    "effect": "Paveikia pasirinktą priešininko veikėją kovos lauke ir jį valdo iki savo ėjimo pabaigos.",
+    "image": "assets/cards/85_demono_apgavyst_.png",
+    "id": 35
+  },
+  {
+    "name": "Zhileg’as",
+    "cost": 700,
+    "attack": 6,
+    "hp": 6,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Sprintas ir apsvaiginimas.",
+    "image": "assets/cards/86_zhileg_as.png",
+    "id": 36
+  },
+  {
+    "name": "Demoniška įžvalga",
+    "cost": 100,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Burtas",
+    "faction": "Demonų orda",
+    "effect": "Peržiūrėkite 5 viršutines savo kaladės kortas. Sudėkite jas kokia norite tvarka ir padėkite ant kaladės viršaus.",
+    "image": "assets/cards/87_demoni_ka_valga.png",
+    "id": 37
+  },
+  {
+    "name": "Tamsios mintys",
+    "cost": 100,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Auka išmeta 2 savo pasirinktas kortas iš rankos į kapinyną.",
+    "image": "assets/cards/88_tamsios_mintys.png",
+    "id": 38
+  },
+  {
+    "name": "Aukos mentalitetas",
+    "cost": 200,
+    "attack": null,
+    "hp": null,
+    "rarity": "Paprastas",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Auka patiria po 0/-2 už kiekvieną kovos lauke esantį veikėją.",
+    "image": "assets/cards/89_aukos_mentalitetas.png",
+    "id": 39
+  },
+  {
+    "name": "Impas",
+    "cost": 100,
+    "attack": 1,
+    "hp": 1,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Paskutinis noras - visi žaidėjai traukia po 1 kortą.",
+    "image": "assets/cards/90_impas.png",
+    "id": 40
+  },
+  {
+    "name": "Alfa pragaro skalikas",
+    "cost": 500,
+    "attack": 4,
+    "hp": 4,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Sprintas",
+    "image": "assets/cards/91_alfa_pragaro_skalikas.png",
+    "id": 41
   }
 ]
