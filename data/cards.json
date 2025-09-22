@@ -1282,5 +1282,101 @@
     "effect": "Auka turi išmesti visas rankoje turimas kortas į kapinyną. Iš kaladės traukti tiek pat kortų kiek išmetė.",
     "image": "assets/cards/100_gob_umas.png",
     "id": 50
+  },
+{
+    "name": "Pragaro skalikas",
+    "cost": 300,
+    "attack": 2,
+    "hp": 2,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Sprintas",
+    "image": "assets/cards/101_pragaro_skalikas.png",
+    "id": 51
+  },
+  {
+    "name": "Korkodeg’as",
+    "cost": 200,
+    "attack": 3,
+    "hp": 1,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Kovos šūksnis visi žaidėjai traukia po 2 kortas.",
+    "image": "assets/cards/102_korkodeg_as.png",
+    "id": 52
+  },
+  {
+    "name": "Tolot’as",
+    "cost": 300,
+    "attack": 2,
+    "hp": 2,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Sprintas",
+    "image": "assets/cards/103_tolot_as.png",
+    "id": 53
+  },
+  {
+    "name": "Brolraron’as",
+    "cost": 700,
+    "attack": 9,
+    "hp": 5,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Apsvaiginimas",
+    "image": "assets/cards/104_brolraron_as.png",
+    "id": 54
+  },
+  {
+    "name": "Sinot’as",
+    "cost": 300,
+    "attack": 2,
+    "hp": 2,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Užnuodyjimas",
+    "image": "assets/cards/105_sinot_as.png",
+    "id": 55
+  },
+  {
+    "name": "Zertahul’as Paskutinysis (Fazė I)",
+    "cost": 600,
+    "attack": null,
+    "hp": 12,
+    "rarity": "Unikalus",
+    "type": "Čempionas",
+    "faction": "Demonų orda",
+    "effect": "Gebėjimas I - padaro 0/-5 pasirinktam veikėjui arba čempionui ir -0/2 sau.\nGebėjimas II - sunaikina draugišką veikėją ir suteikia sau 0/+4.\nGebėjimas III - suteikia pasirinktam demonų tipo veikėjui +1/+1 ir pasišaipymą.",
+    "image": "assets/cards/106_zertahul_as_paskutinysis_faz_i_.png",
+    "id": 56
+  },
+  {
+    "name": "Zertahul’as Paskutinysis (Fazė II)",
+    "cost": 700,
+    "attack": null,
+    "hp": 15,
+    "rarity": "Epiškas",
+    "type": "Čempionas",
+    "faction": "Demonų orda",
+    "effect": "Gebėjimas I - padaro 0/-7 pasirinktam veikėjui arba čempionui ir -0/3 sau.\nGebėjimas II - sunaikina draugišką veikėją ir suteikia sau 0/+6.\nGebėjimas III - suteikia pasirinktam demonų tipo veikėjui +2/+2 ir pasišaipymą.",
+    "image": "assets/cards/107_zertahul_as_paskutinysis_faz_ii_.png",
+    "id": 57
+  },
+  {
+    "name": "Zertahul’as Paskutinysis (Fazė III)",
+    "cost": 800,
+    "attack": null,
+    "hp": 19,
+    "rarity": "Legendinis",
+    "type": "Čempionas",
+    "faction": "Demonų orda",
+    "effect": "Gebėjimas I - padaro 0/-9 pasirinktam veikėjui arba čempionui ir -0/4 sau.\nGebėjimas II - sunaikina draugišką veikėją ir suteikia sau 0/+8.\nGebėjimas III - suteikia pasirinktam demonų tipo veikėjui +3/+3 ir pasišaipymą.",
+    "image": "assets/cards/108_zertahul_as_paskutinysis_faz_iii_.png",
+    "id": 58
   }
 ]
