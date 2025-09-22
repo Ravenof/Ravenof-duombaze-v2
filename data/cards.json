@@ -778,5 +778,101 @@
     "effect": "Kovos šūksnis - šį ėjimą galite naudoti vieną prakeiksmo kortą kaip burtų kortą.",
     "image": "assets/cards/58_klastingoji_aelot_.png",
     "id": 8
+  },
+{
+    "name": "Trinak’as Kerštingasis",
+    "cost": 800,
+    "attack": 6,
+    "hp": 5,
+    "rarity": "",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Pasyvus, prakeiksmų poveikis dvigubėja.",
+    "image": "assets/cards/59_trinak_as_ker_tingasis.png",
+    "id": 9
+  },
+  {
+    "name": "Tamsos altorius",
+    "cost": 400,
+    "attack": null,
+    "hp": 12,
+    "rarity": "Epiškas",
+    "type": "Artefaktas",
+    "faction": "Demonų orda",
+    "effect": "Sustiprinimo burtai vietoje gydymo daro žalą.",
+    "image": "assets/cards/60_tamsos_altorius.png",
+    "id": 10
+  },
+  {
+    "name": "Kankintojo kirvis",
+    "cost": 400,
+    "attack": null,
+    "hp": 9,
+    "rarity": "Unikalus",
+    "type": "Artefaktas",
+    "faction": "Demonų orda",
+    "effect": "Pasyvus - Kas ėjimą žaidėjas gali padaryti sau 0/-7, priverčiant auką traukti kortas tol, kol ištrauks prakeiksmą. Kitas kortas įmaišo atgal į kaladę.",
+    "image": "assets/cards/61_kankintojo_kirvis.png",
+    "id": 11
+  },
+  {
+    "name": "Vethagog’o kalnas",
+    "cost": 400,
+    "attack": null,
+    "hp": null,
+    "rarity": "Unikalus",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Aukos veikėjai ir artefaktai patiria po -4/-4 už kiekvieną kovos lauke esantį demonų tipo veikėją.",
+    "image": "assets/cards/62_vethagog_o_kalnas.png",
+    "id": 12
+  },
+  {
+    "name": "Gazzar’a",
+    "cost": 600,
+    "attack": 4,
+    "hp": 4,
+    "rarity": "Unikalus",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Kas kartą, kai sunaikina priešininko veikėją, suteikia sau 0/+2.",
+    "image": "assets/cards/63_gazzar_a.png",
+    "id": 13
+  },
+  {
+    "name": "Digolan’as",
+    "cost": 400,
+    "attack": 3,
+    "hp": 4,
+    "rarity": "Unikalus",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Paskutinis noras - nemokamai įmaišykite 2 prakeiksmo kortas iš rankos į priešininko kaladę.\nTraukite kortą.",
+    "image": "assets/cards/64_digolan_as.png",
+    "id": 14
+  },
+  {
+    "name": "Mubaal’as",
+    "cost": 300,
+    "attack": 2,
+    "hp": 3,
+    "rarity": "Unikalus",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Kovos šūksnis: priešininkas traukia kortas tol, kol ištrauks prakeiksmo kortą. Kitas kortas įmaišo atgal į kaladę.",
+    "image": "assets/cards/65_mubaal_as.png",
+    "id": 15
+  },
+  {
+    "name": "Jarot’as",
+    "cost": 500,
+    "attack": 2,
+    "hp": 2,
+    "rarity": "Unikalus",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Pasyvus, visa žala kurią patiria priešininko veikėjai pridedama prie jūsų žaidėjo gyvybės taškų.",
+    "image": "assets/cards/66_jarot_as.png",
+    "id": 16
   }
 ]
