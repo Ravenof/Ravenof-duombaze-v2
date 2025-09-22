@@ -682,5 +682,101 @@
     "effect": "Gebėjimas I - suteikia + 300 monetų šiam ėjimui.\nGebėjimas II Paaukok -400 monetų ir padaryk 0/-8 pasirinktam veikėjui, čempionui arba artefaktui.\nGebėjimas III Sunaikina pasirinktą priešininko veikėja jei jis turi nei 3 arba mažiau gyvybės taškus",
     "image": "assets/cards/50_kapitonas_juodasmakris_iii_faz_.png",
     "id": 116
+  },
+{
+    "name": "Oglor’as Klaidintojas",
+    "cost": 700,
+    "attack": 8,
+    "hp": 5,
+    "rarity": "Legendinis",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Pasyvus - kai aktyvuojamas prakeiksmas, grąžinkite šį veikėją iš kapinyno atgal į kovos lauką.",
+    "image": "assets/cards/51_oglor_as_klaidintojas.png",
+    "id": 1
+  },
+  {
+    "name": "Didysis Belzatoras",
+    "cost": 800,
+    "attack": 8,
+    "hp": 9,
+    "rarity": "Legendinis",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Pasyvus - ėjimo pradžioje sunaikina priešininko veikėją su daugiausiai gyvybės taškų jei jų nėra padaro priešininko žaidėjui 0/-2.",
+    "image": "assets/cards/52_didysis_belzatoras.png",
+    "id": 2
+  },
+  {
+    "name": "Rengaras Mėgdžiotojas",
+    "cost": 700,
+    "attack": 4,
+    "hp": 6,
+    "rarity": "Legendinis",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Kovos šūksnis - Pasirink priešininko kapinyne esančio veikėjo efektą ir nukopijuok jį.\nPasyvus - Kiekvieną kartą, kai sunaikinamas bet kuris veikėjas – abu žaidėjai -1 HP.",
+    "image": "assets/cards/53_rengaras_m_gd_iotojas.png",
+    "id": 3
+  },
+  {
+    "name": "Okuliaras",
+    "cost": 700,
+    "attack": 6,
+    "hp": 6,
+    "rarity": "Legendinis",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Kovos šūksnis - peržiūri 6 viršutines priešininko kaladės kortas, pasirinktas 3 išmeta į kapinyną.",
+    "image": "assets/cards/54_okuliaras.png",
+    "id": 4
+  },
+  {
+    "name": "Zorzok’as Alkanasis",
+    "cost": 500,
+    "attack": 4,
+    "hp": 4,
+    "rarity": "Epiškas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Kovos šūksnis - padaro po 0/-1 visiems veikėjams kovos lauke. Visa padaryta žala pridedama prie šio veikėjo puolimo taškų.",
+    "image": "assets/cards/55_zorzok_as_alkanasis.png",
+    "id": 5
+  },
+  {
+    "name": "Kryžkėlės demonas",
+    "cost": 200,
+    "attack": null,
+    "hp": null,
+    "rarity": "Epiškas",
+    "type": "Burtas",
+    "faction": "Demonų orda",
+    "effect": "Sugrąžina 1 pasirinktą demonų tipo veikėją iš kapinyno atgal į kovos lauką su +2/-2.",
+    "image": "assets/cards/56_kry_k_l_s_demonas.png",
+    "id": 6
+  },
+  {
+    "name": "Rajūnas Pak-erael’is",
+    "cost": 700,
+    "attack": 5,
+    "hp": 4,
+    "rarity": "Epiškas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Pasyvus - Kartą per ėjimą, gali sunaikinti pasirinktą prakeiksmą iš priešininko kaladės, kad pridėtų sau +3/+3.",
+    "image": "assets/cards/57_raj_nas_pak_erael_is.png",
+    "id": 7
+  },
+  {
+    "name": "Klastingoji Aelot’ė",
+    "cost": 400,
+    "attack": 4,
+    "hp": 3,
+    "rarity": "Epiškas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Kovos šūksnis - šį ėjimą galite naudoti vieną prakeiksmo kortą kaip burtų kortą.",
+    "image": "assets/cards/58_klastingoji_aelot_.png",
+    "id": 8
   }
 ]
