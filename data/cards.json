@@ -334,5 +334,113 @@
     "effect": "Suteikia visiems draugiškiems veikėjams +2/0. Visiems priešininkų veikėjams +1/0.",
     "image": "assets/cards/9_netik_tos_relikvijos.png",
     "id": 87
+  },
+{
+    "name": "Žėltma Šarmė",
+    "cost": 500,
+    "attack": 3,
+    "hp": 5,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - Kai patiria žalą, suteikia pasirinktam draugiškam veikėjui +1/0.",
+    "image": "assets/cards/14__ltma_arm_.png",
+    "id": 88
+  },
+  {
+    "name": "Grobio dalybos",
+    "cost": 200,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Burtas",
+    "faction": "Plėšikų naktis",
+    "effect": "Suteikia visiems žaidėjams po 300 monetų, jų sekančio ėjimo pradžioje.",
+    "image": "assets/cards/15_grobio_dalybos.png",
+    "id": 89
+  },
+  {
+    "name": "Juodvėrė Mirla",
+    "cost": 600,
+    "attack": 8,
+    "hp": 2,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Sprintas",
+    "image": "assets/cards/16_juodv_r_mirla.png",
+    "id": 90
+  },
+  {
+    "name": "Azura Miklioji",
+    "cost": 400,
+    "attack": 3,
+    "hp": 2,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Atlikus puolimo veiksmą šis veikėjas grįžta atgal į ranką.",
+    "image": "assets/cards/17_azura_miklioji.png",
+    "id": 91
+  },
+  {
+    "name": "Vilpūras Semis",
+    "cost": 500,
+    "attack": 4,
+    "hp": 3,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Paskutinis noras - iš kaladės traukiamos 2 kortos.",
+    "image": "assets/cards/18_vilp_ras_semis.png",
+    "id": 92
+  },
+  {
+    "name": "Munčis chebrantas",
+    "cost": 200,
+    "attack": 2,
+    "hp": 1,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Kovos šūksnis - jei kaladėje arba rankoje turite “Piratas žvalgas” iškvieskite jį į kovos lauką.",
+    "image": "assets/cards/19_mun_is_chebrantas.png",
+    "id": 93
+  },
+  {
+    "name": "Žaibo Plunksna",
+    "cost": 800,
+    "attack": 6,
+    "hp": 7,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Kovos šūksnis - padaro visiems priešininkų veikėjams ir žaidėjams po 0/-3.",
+    "image": "assets/cards/20__aibo_plunksna.png",
+    "id": 94
+  },
+  {
+    "name": "Staugirdas Klasta",
+    "cost": 600,
+    "attack": 3,
+    "hp": 5,
+    "rarity": "Paprastas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - ėjimo pradžioje gaukite 100 monetų.",
+    "image": "assets/cards/21_staugirdas_klasta.png",
+    "id": 95
+  },
+  {
+    "name": "Jungos plunksna",
+    "cost": 400,
+    "attack": null,
+    "hp": 8,
+    "rarity": "Paprastas",
+    "type": "Artefaktas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus Visi piratų tipo veikėjai puldami turi +1/0.",
+    "image": "assets/cards/22_jungos_plunksna.png",
+    "id": 96
   }
 ]
