@@ -958,5 +958,113 @@
     "effect": "Visi aukos veikėjai ir artefaktai kovos lauke lieka su 1 gyvybės tašku. Visi žaidėjai traukia po 2 kortas.",
     "image": "assets/cards/73_pragaro_liepsna.png",
     "id": 23
+  },
+  {
+    "name": "Kraujas už kraują",
+    "cost": 400,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Aukos žaidėjas patiria 0/-10. Išmeta 2 savo pasirinktas kortas iš rankos į kapinyną.",
+    "image": "assets/cards/74_kraujas_u_krauj_.png",
+    "id": 24
+  },
+  {
+    "name": "Geralel’as",
+    "cost": 300,
+    "attack": 3,
+    "hp": 1,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Paskutinis noras - traukite 1 kortą.",
+    "image": "assets/cards/75_geralel_as.png",
+    "id": 25
+  },
+  {
+    "name": "Dyglių velnias",
+    "cost": 300,
+    "attack": 3,
+    "hp": 2,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Sprintas",
+    "image": "assets/cards/76_dygli_velnias.png",
+    "id": 26
+  },
+  {
+    "name": "Prakeiktasis žvėris",
+    "cost": 600,
+    "attack": 5,
+    "hp": 5,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Sprintas",
+    "image": "assets/cards/77_prakeiktasis_v_ris.png",
+    "id": 27
+  },
+  {
+    "name": "Gargarmaras",
+    "cost": 400,
+    "attack": 2,
+    "hp": 4,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Sprintas ir apsvaiginimas",
+    "image": "assets/cards/78_gargarmaras.png",
+    "id": 28
+  },
+  {
+    "name": "Gilus pavydas",
+    "cost": 300,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Auka šį ėjimą negali naudoti savo aukso monetų.",
+    "image": "assets/cards/79_gilus_pavydas.png",
+    "id": 29
+  },
+  {
+    "name": "Krajuasiurbys kirmis",
+    "cost": 400,
+    "attack": 4,
+    "hp": 3,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Kovos šūksnis - Pasirinktas priešininko veikėjas patiria -1/0, tavo žaidėjas įgyja 0/+1.",
+    "image": "assets/cards/80_krajuasiurbys_kirmis.png",
+    "id": 30
+  },
+  {
+    "name": "Gniuždantis žvilgsnis",
+    "cost": 400,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Visi aukos veikėjai esantys kovos lauke patiria -2/-2.",
+    "image": "assets/cards/81_gniu_dantis_vilgsnis.png",
+    "id": 31
+  },
+  {
+    "name": "Demoniška akistata",
+    "cost": 300,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Sunaikina po brangiausią veikėją abiejuose kovos lauko pusėse. Jų gyvybės taškus prideda prakeiksmo savininko žaidėjui.",
+    "image": "assets/cards/82_demoni_ka_akistata.png",
+    "id": 32
   }
 ]
