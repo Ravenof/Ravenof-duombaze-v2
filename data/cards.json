@@ -226,5 +226,114 @@
     "effect": "Pasišaipymas. Pasyvus - kai pavagiamos monetos įgyja +2HP.",
     "image": "assets/cards/8_gylis_paslaptingasis.png",
     "id": "70"
+  },
+  [
+  {
+    "name": "Tomis Svydis",
+    "cost": 200,
+    "attack": 3,
+    "hp": 1,
+    "rarity": "Unikalus",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Sprintas",
+    "image": "assets/cards/1_tomis_svydis.png",
+    "id": 79
+  },
+  {
+    "name": "Rūskė Aidė",
+    "cost": 400,
+    "attack": 4,
+    "hp": 1,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Kovos šūksnis - suteikia +100 monetų, traukite kortą.",
+    "image": "assets/cards/2_r_sk_aid_.png",
+    "id": 80
+  },
+  {
+    "name": "Barbadosas Klintas",
+    "cost": 400,
+    "attack": 5,
+    "hp": 4,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - ėjimo pradžioje gaukite papildomas 100 monetų.",
+    "image": "assets/cards/3_barbadosas_klintas.png",
+    "id": 81
+  },
+  {
+    "name": "Paslaptinga skrynelė",
+    "cost": 100,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Burtas",
+    "faction": "Plėšikų naktis",
+    "effect": "Žetono metimas - Žalias suteikia +200 monetų, raudonas kortos traukimą.",
+    "image": "assets/cards/4_paslaptinga_skrynel_.png",
+    "id": 82
+  },
+  {
+    "name": "Jūros šmėklos lobis",
+    "cost": 400,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Burtas",
+    "faction": "Plėšikų naktis",
+    "effect": "Suteikia visiems žaidėjams +200 monetų jų sekančio ėjimo pradžioje. Visiems veikėjams kovos lauke padaro -2ATK.",
+    "image": "assets/cards/5_j_ros_m_klos_lobis.png",
+    "id": 83
+  },
+  {
+    "name": "Vilkė Šėlsminė",
+    "cost": 300,
+    "attack": 3,
+    "hp": 2,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Kovos šūksnis - jei kaladėje arba rankoje turite “Mirtulė Aura” iškvieskite ją į kovos lauką.",
+    "image": "assets/cards/6_vilk_lsmin_.png",
+    "id": 84
+  },
+  {
+    "name": "Jungos agonija",
+    "cost": 200,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Burtas",
+    "faction": "Plėšikų naktis",
+    "effect": "Suteikia +5/-2 pasirinktam piratų tipo veikėjui.",
+    "image": "assets/cards/7_jungos_agonija.png",
+    "id": 85
+  },
+  {
+    "name": "Drūzas Kirvarža",
+    "cost": 600,
+    "attack": 5,
+    "hp": 3,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Plėšikų naktis",
+    "effect": "Pasyvus - priešininko veikėjai kainuoja 100 monetų brangiau.",
+    "image": "assets/cards/8_dr_zas_kirvar_a.png",
+    "id": 86
+  },
+  {
+    "name": "Netikėtos relikvijos",
+    "cost": 200,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Burtas",
+    "faction": "Vryhiok'o gauja",
+    "effect": "Suteikia visiems draugiškiems veikėjams +2/0. Visiems priešininkų veikėjams +1/0.",
+    "image": "assets/cards/9_netik_tos_relikvijos.png",
+    "id": 87
   }
 ]
