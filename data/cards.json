@@ -874,5 +874,89 @@
     "effect": "Pasyvus, visa žala kurią patiria priešininko veikėjai pridedama prie jūsų žaidėjo gyvybės taškų.",
     "image": "assets/cards/66_jarot_as.png",
     "id": 16
+  },
+  {
+    "name": "Astrareg’as",
+    "cost": 700,
+    "attack": 3,
+    "hp": 6,
+    "rarity": "Unikalus",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Paskutinis noras Iš kaladės, rankos arba kapinyno iškviečia 2 “Impas”.",
+    "image": "assets/cards/67_astrareg_as.png",
+    "id": 17
+  },
+  {
+    "name": "Dolgid’as",
+    "cost": 600,
+    "attack": 4,
+    "hp": 4,
+    "rarity": "Unikalus",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Kovos šūksnis sunaikina mažiausiai puolimo taškų kovos lauke turintį priešininko veikėją. Prideda jo puolimo taškus sau.",
+    "image": "assets/cards/68_dolgid_as.png",
+    "id": 18
+  },
+  {
+    "name": "Ongromig’as",
+    "cost": 700,
+    "attack": 6,
+    "hp": 6,
+    "rarity": "Unikalus",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Pasyvus - priešininko žaidėjas praranda po 0/-2 kas kartą traukdamas kortą.",
+    "image": "assets/cards/69_ongromig_as.png",
+    "id": 19
+  },
+  {
+    "name": "Viglal’as",
+    "cost": 500,
+    "attack": 5,
+    "hp": 4,
+    "rarity": "Unikalus",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Pasyvus - Kai sunaikinamas bet kuris veikėjas suteikia savo žaidėjui 0/+1.",
+    "image": "assets/cards/70_viglal_as.png",
+    "id": 20
+  },
+  {
+    "name": "Riglek’as",
+    "cost": 600,
+    "attack": 6,
+    "hp": 5,
+    "rarity": "Magiškas",
+    "type": "Veikėjas",
+    "faction": "Demonų orda",
+    "effect": "Pasyvus - kai puola priešininko veikėją, suteikia savo žaidėjui 0/+1.",
+    "image": "assets/cards/71_riglek_as.png",
+    "id": 21
+  },
+  {
+    "name": "Kančių knyga",
+    "cost": 200,
+    "attack": null,
+    "hp": 6,
+    "rarity": "Magiškas",
+    "type": "Artefaktas",
+    "faction": "Demonų orda",
+    "effect": "Burtų aktyvavimas padaro 0/-3, burtą naudojantiems žaidėjams. Prakeiksmo aktyvavimas žalą padaro aukai.",
+    "image": "assets/cards/72_kan_i_knyga.png",
+    "id": 22
+  },
+  {
+    "name": "Pragaro Liepsna",
+    "cost": 400,
+    "attack": null,
+    "hp": null,
+    "rarity": "Magiškas",
+    "type": "Prakeiksmas",
+    "faction": "Demonų orda",
+    "effect": "Visi aukos veikėjai ir artefaktai kovos lauke lieka su 1 gyvybės tašku. Visi žaidėjai traukia po 2 kortas.",
+    "image": "assets/cards/73_pragaro_liepsna.png",
+    "id": 23
   }
 ]
