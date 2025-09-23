@@ -1225,7 +1225,7 @@
   },
   {
     "name": "Pelkių velnias",
-    "cost": 200,
+    "cost": 300,
     "attack": 2,
     "hp": 2,
     "rarity": "Paprastas",
