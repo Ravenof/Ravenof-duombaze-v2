@@ -781,13 +781,13 @@
   },
 {
     "name": "Trinak’as Kerštingasis",
-    "cost": 800,
+    "cost": 600,
     "attack": 6,
     "hp": 5,
     "rarity": "Epiškas",
     "type": "Veikėjas",
     "faction": "Demonų orda",
-    "effect": "Pasyvus, prakeiksmų poveikis dvigubėja.",
+    "effect": "Kovos šūksnis - pašalinkite vieną -2 žalos modifikatorių iš savo kaladės iki žaidimo pabaigos. ",
     "image": "assets/cards/59_trinak_as_ker_tingasis.png",
     "id": 9
   },
